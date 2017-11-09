@@ -28,4 +28,14 @@
 
 ![图3-1 Tap gestures](https://docs-assets.developer.apple.com/published/7c21d852b9/14d1769c-c081-4c4a-9466-e5dca8a2e053.png)
 
-点击手势属于离散型手势，只有当点击手势被识别后才会调用其关联对象的操作方法。
+点击手势属于离散型手势，只有当点击手势识别成功后才会调用其关联对象的操作方法。由于手势可以被取消的原因有很多，所以在操作方法中回应手势前，检查`state`属性可以确保不会出错。
+
+如果点击屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 点击次数等于`numberOfTapsRequired`属性中指定的次数。
+- 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
+
+### 长按手势
+
+
