@@ -30,12 +30,29 @@
 
 点击手势属于离散型手势，只有当点击手势识别成功后才会调用其关联对象的操作方法。由于手势可以被取消的原因有很多，所以在操作方法中回应手势前，检查`state`属性可以确保不会出错。
 
-如果点击屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
 
 - 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
 - 点击次数等于`numberOfTapsRequired`属性中指定的次数。
 - 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
 
 ### 长按手势
+
+长按手势识别器`UILongPressGestureRecognizer`对象检测一个或者多个手指长时间触摸屏幕。涉及手势的手指不能从初始触摸点**显著移动**到其他地方，但可以配置手指必须触摸屏幕的次数以及长按手势的最短持续时间。手势识别器仅由触摸的持续时间而不是与其相关的力触发。
+
+![图3-2 Long-press gesture](https://docs-assets.developer.apple.com/published/7c21d852b9/c57fc4b9-4419-4ef9-9067-d27f474504af.png)
+
+长按手势根据触摸的持续时间来确定手势的成功或者失败，它属于连续型手势，其关联对象的操作方法可能会随着手势状态的变化而被多次调用。长按手势识别器在用户手指停留在屏幕上一定时间后(用户手指仍旧停留在屏幕上)进入`UIGestureRecognizerStateBegan`状态，当触摸事件更新时，进入`UIGestureRecognizerStateChanged`状态，用户手指离开屏幕时，进入`UIGestureRecognizerStateEnded`状态。
+
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 点击次数等于`numberOfTapsRequired`属性中指定的次数。
+- 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
+- 触摸持续时间大于`minimumPressDuration`属性中指定的时间。
+
+### 拖拽手势
+
+
 
 
