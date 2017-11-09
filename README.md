@@ -24,7 +24,7 @@
 
 ### 点击手势
 
-点击手势识别器`UITapGestureRecognizer`对象会简要地检测一个或多个手指触摸屏幕。涉及手势的手指不能从初始触摸点**显著移动**到其他地方，但可以配置手指必须触摸屏幕的次数。例如，可以配置点击手势识别器来检测单击，双击或者三击。
+点击手势识别器`UITapGestureRecognizer`对象会简要地检测一个或多个手指点击屏幕。涉及手势的手指不能从初始触摸点**显著移动**到其他地方，但可以配置手指必须触摸屏幕的次数。例如，可以配置点击手势识别器来检测单击，双击或者三击。
 
 ![图3-1 Tap gestures](https://docs-assets.developer.apple.com/published/7c21d852b9/14d1769c-c081-4c4a-9466-e5dca8a2e053.png)
 
@@ -52,6 +52,10 @@
 - 触摸持续时间大于`minimumPressDuration`属性中指定的时间。
 
 ### 拖拽手势
+
+拖拽手势识别器`UIPanGestureRecognizer`对象检测一个或者多个手指在屏幕上移动。屏幕边缘拖拽手势是限定触摸位置在屏幕边缘的拖拽手势，使用`UIScreenEdgePanGestureRecognizer`对象来识别屏幕边缘拖拽手势。
+
+![图3-3 Pan gesture](https://docs-assets.developer.apple.com/published/7c21d852b9/92edf0c4-8d94-469b-b81d-c00a20e74f5e.png)
 
 
 
