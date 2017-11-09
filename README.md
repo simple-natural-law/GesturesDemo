@@ -30,7 +30,8 @@
 
 点击手势属于离散型手势，只有当点击手势识别成功后才会调用其关联对象的操作方法。由于手势可以被取消的原因有很多，所以在操作方法中回应手势前，检查`state`属性可以确保不会出错。
 
-> 注意：如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
 - 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
 - 点击次数等于`numberOfTapsRequired`属性中指定的次数。
 - 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
@@ -43,11 +44,12 @@
 
 长按手势根据触摸的持续时间来确定手势的成功或者失败，它属于连续型手势，手势关联对象的操作方法可能会随着手势状态的变化而被多次调用。长按手势识别器在用户手指停留在屏幕上一定时间后(用户手指仍旧停留在屏幕上)进入`UIGestureRecognizerStateBegan`状态，当触摸事件更新时，进入`UIGestureRecognizerStateChanged`状态，用户手指离开屏幕时，进入`UIGestureRecognizerStateEnded`状态。
 
-> 注意：如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
-    - 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
-    - 点击次数等于`numberOfTapsRequired`属性中指定的次数。
-    - 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
-    - 触摸持续时间大于`minimumPressDuration`属性中指定的时间。
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 点击次数等于`numberOfTapsRequired`属性中指定的次数。
+- 手指个数等于`numberOfTouchesRequired`属性中指定的个数。
+- 触摸持续时间大于`minimumPressDuration`属性中指定的时间。
 
 ### 拖拽手势
 
@@ -59,12 +61,22 @@
 
 使用`UIPanGestureRecognizer`对象的`translationInView:`方法可以获取手指从初始触摸位置移动的距离。在手势开始时，拖拽手势识别器会存储初始触摸点。如果手势涉及多个手指，则手势识别器会使用多个手指的触摸点的中心点。
 
-> 注意：如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
 - 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
 - 触摸次数在`minimumNumberOfTouches`和`maximumNumberOfTouches`属性中指定的值之间。
 - 如果是屏幕边缘拖拽手势，应确保触摸位置在`edges`属性中指定的区域中。
 
 ### 轻扫手势
 
+轻扫手势识别器`UISwipeGestureRecognizer`对象检测屏幕上一个或多个手指在特定的水平或垂直方向上移动。轻扫手势的方向和手指的数量是可以配置的，其属于离散型手势，只有在手势被成功识别后才会调用手势关联对象的操作方法。当我们只关注手势的结果而不关注手指的移动时，轻扫手势是最合适的。
 
+![图3-4 Swipe gesture](https://docs-assets.developer.apple.com/published/7c21d852b9/7fa694cb-f654-4f71-a653-ea908b5bb27c.png)
 
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 触摸次数等于`numberOfTouchesRequired`属性中指定的值之间。
+- 滑动的方向与`direction`属性值相匹配。
+
+### 捏合手势
