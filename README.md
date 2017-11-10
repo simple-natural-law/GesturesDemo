@@ -80,3 +80,33 @@
 - 滑动的方向与`direction`属性值相匹配。
 
 ### 捏合手势
+
+捏合手势属于连续型手势，其跟踪最先触摸屏幕的两根手指之间的距离，使用`UIPinchGestureRecognizer`对象来检测捏合手势。
+
+![图3-5 Pinch gestures](https://docs-assets.developer.apple.com/published/7c21d852b9/46733a3e-1a59-4ca3-acb3-dc14958374a7.png)
+
+当两个手指间的距离开始改变时，会更新捏合手势识别器对象的手指间当前距离与初始距离的比例`scale`属性值，然后调用手势关联目标对象的操作方法。捏合手势常用于更改屏幕上的对象或者内容的大小。**在缩放内容大小时，应该取`scale`值和内容初始大小的积。**
+
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 至少两根手指同时触摸屏幕。
+- 正在使用`scale`值缩放内容大小。
+
+### 旋转手势
+
+旋转手势属于连续型手势，其跟踪触摸屏幕的两根手指旋转的角度，使用`UIRotationGestureRecognizer`对象来检测旋转手势。
+
+![图3-6 Rotation gesture](https://docs-assets.developer.apple.com/published/7c21d852b9/0d8b92d2-dbfc-4316-97fd-aa2f6ee22db3.png)
+
+当手指开始在屏幕上旋转时，会更新旋转手势识别器对象的从初始到现在已旋转角度`rotation`属性值，然后调用手势关联目标对象的操作方法。可以使用旋转手势来旋转视图或者更新自定义控件的值。
+
+如果触摸屏幕后没有调用与手势识别器关联的对象的操作方法，请检查下列条件是否成立：
+
+- 视图的`userInteractionEnabled`属性设置为`YES`。`UIImageView`和`UILabel`类默认将此属性设为`NO`。
+- 至少两根手指同时触摸屏幕。
+- 正在使用`rotation`旋转内容。
+
+## 协调多个手势识别器
+
+
