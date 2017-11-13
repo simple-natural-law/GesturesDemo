@@ -10,14 +10,31 @@
 
 @interface RotationGestureViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *targetView;
+
 @end
 
 @implementation RotationGestureViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIRotationGestureRecognizer *rotation = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotationAction:)];
+    
+    [self.view addGestureRecognizer:rotation];
 }
+
+
+- (void)rotationAction:(UIRotationGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged)
+    {
+        self.targetView.transform = CGAffineTransformMakeRotation(gestureRecognizer.rotation);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
