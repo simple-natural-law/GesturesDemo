@@ -13,6 +13,13 @@
 		1A9D69381FB2FDD300DDA475 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D69371FB2FDD300DDA475 /* main.m */; };
 		1AB0941C1FB980BF0049F19B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D692E1FB2FDD300DDA475 /* Main.storyboard */; };
 		1AB0941D1FB980BF0049F19B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A9D69331FB2FDD300DDA475 /* LaunchScreen.storyboard */; };
+		1AB094331FB982820049F19B /* TapGesturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094201FB982820049F19B /* TapGesturesViewController.m */; };
+		1AB094341FB982820049F19B /* PinchGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094231FB982820049F19B /* PinchGestureViewController.m */; };
+		1AB094351FB982820049F19B /* SingleDoubleTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094261FB982820049F19B /* SingleDoubleTapViewController.m */; };
+		1AB094361FB982820049F19B /* RotationGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094291FB982820049F19B /* RotationGestureViewController.m */; };
+		1AB094371FB982820049F19B /* SwipGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0942C1FB982820049F19B /* SwipGestureViewController.m */; };
+		1AB094381FB982820049F19B /* PanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0942F1FB982820049F19B /* PanGestureViewController.m */; };
+		1AB094391FB982820049F19B /* LongPressGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094321FB982820049F19B /* LongPressGestureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,20 @@
 		1A9D69361FB2FDD300DDA475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A9D69371FB2FDD300DDA475 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AB0941B1FB980710049F19B /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		1AB0941F1FB982820049F19B /* TapGesturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapGesturesViewController.h; sourceTree = "<group>"; };
+		1AB094201FB982820049F19B /* TapGesturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapGesturesViewController.m; sourceTree = "<group>"; };
+		1AB094221FB982820049F19B /* PinchGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinchGestureViewController.h; sourceTree = "<group>"; };
+		1AB094231FB982820049F19B /* PinchGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinchGestureViewController.m; sourceTree = "<group>"; };
+		1AB094251FB982820049F19B /* SingleDoubleTapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleDoubleTapViewController.h; sourceTree = "<group>"; };
+		1AB094261FB982820049F19B /* SingleDoubleTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleDoubleTapViewController.m; sourceTree = "<group>"; };
+		1AB094281FB982820049F19B /* RotationGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationGestureViewController.h; sourceTree = "<group>"; };
+		1AB094291FB982820049F19B /* RotationGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationGestureViewController.m; sourceTree = "<group>"; };
+		1AB0942B1FB982820049F19B /* SwipGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipGestureViewController.h; sourceTree = "<group>"; };
+		1AB0942C1FB982820049F19B /* SwipGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipGestureViewController.m; sourceTree = "<group>"; };
+		1AB0942E1FB982820049F19B /* PanGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureViewController.h; sourceTree = "<group>"; };
+		1AB0942F1FB982820049F19B /* PanGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureViewController.m; sourceTree = "<group>"; };
+		1AB094311FB982820049F19B /* LongPressGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressGestureViewController.h; sourceTree = "<group>"; };
+		1AB094321FB982820049F19B /* LongPressGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressGestureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,13 @@
 		1A9D69271FB2FDD300DDA475 /* GesturesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1AB094241FB982820049F19B /* 单击手势与双击手势冲突处理 */,
+				1AB0941E1FB982820049F19B /* 点击手势 */,
+				1AB094211FB982820049F19B /* 捏合手势 */,
+				1AB0942A1FB982820049F19B /* 轻扫手势 */,
+				1AB0942D1FB982820049F19B /* 拖拽手势 */,
+				1AB094271FB982820049F19B /* 旋转手势 */,
+				1AB094301FB982820049F19B /* 长按手势 */,
 				1A9D69281FB2FDD300DDA475 /* AppDelegate.h */,
 				1A9D69291FB2FDD300DDA475 /* AppDelegate.m */,
 				1AB0941B1FB980710049F19B /* HomeViewController.h */,
@@ -69,6 +97,69 @@
 				1A9D69371FB2FDD300DDA475 /* main.m */,
 			);
 			path = GesturesDemo;
+			sourceTree = "<group>";
+		};
+		1AB0941E1FB982820049F19B /* 点击手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB0941F1FB982820049F19B /* TapGesturesViewController.h */,
+				1AB094201FB982820049F19B /* TapGesturesViewController.m */,
+			);
+			path = "点击手势";
+			sourceTree = "<group>";
+		};
+		1AB094211FB982820049F19B /* 捏合手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB094221FB982820049F19B /* PinchGestureViewController.h */,
+				1AB094231FB982820049F19B /* PinchGestureViewController.m */,
+			);
+			path = "捏合手势";
+			sourceTree = "<group>";
+		};
+		1AB094241FB982820049F19B /* 单击手势与双击手势冲突处理 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB094251FB982820049F19B /* SingleDoubleTapViewController.h */,
+				1AB094261FB982820049F19B /* SingleDoubleTapViewController.m */,
+			);
+			path = "单击手势与双击手势冲突处理";
+			sourceTree = "<group>";
+		};
+		1AB094271FB982820049F19B /* 旋转手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB094281FB982820049F19B /* RotationGestureViewController.h */,
+				1AB094291FB982820049F19B /* RotationGestureViewController.m */,
+			);
+			path = "旋转手势";
+			sourceTree = "<group>";
+		};
+		1AB0942A1FB982820049F19B /* 轻扫手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB0942B1FB982820049F19B /* SwipGestureViewController.h */,
+				1AB0942C1FB982820049F19B /* SwipGestureViewController.m */,
+			);
+			path = "轻扫手势";
+			sourceTree = "<group>";
+		};
+		1AB0942D1FB982820049F19B /* 拖拽手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB0942E1FB982820049F19B /* PanGestureViewController.h */,
+				1AB0942F1FB982820049F19B /* PanGestureViewController.m */,
+			);
+			path = "拖拽手势";
+			sourceTree = "<group>";
+		};
+		1AB094301FB982820049F19B /* 长按手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AB094311FB982820049F19B /* LongPressGestureViewController.h */,
+				1AB094321FB982820049F19B /* LongPressGestureViewController.m */,
+			);
+			path = "长按手势";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB094341FB982820049F19B /* PinchGestureViewController.m in Sources */,
+				1AB094381FB982820049F19B /* PanGestureViewController.m in Sources */,
+				1AB094331FB982820049F19B /* TapGesturesViewController.m in Sources */,
 				1A9D692D1FB2FDD300DDA475 /* HomeViewController.m in Sources */,
 				1A9D69381FB2FDD300DDA475 /* main.m in Sources */,
 				1A9D692A1FB2FDD300DDA475 /* AppDelegate.m in Sources */,
+				1AB094391FB982820049F19B /* LongPressGestureViewController.m in Sources */,
+				1AB094351FB982820049F19B /* SingleDoubleTapViewController.m in Sources */,
+				1AB094361FB982820049F19B /* RotationGestureViewController.m in Sources */,
+				1AB094371FB982820049F19B /* SwipGestureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
