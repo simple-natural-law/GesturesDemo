@@ -1,24 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="31E-i9-QiZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="0X2-Fb-7wX">
+            <objects>
+                <navigationController id="31E-i9-QiZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eGU-Xy-0eV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8bo-9K-O9V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jft-Sy-rOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-938" y="46"/>
+        </scene>
+        <!--手势识别器Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="手势识别器Demo" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mdn-P7-pUH"/>
+                        <viewControllerLayoutGuide type="bottom" id="5zX-Pn-2yh"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BL4-Z5-wTW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="58" id="dx7-Qk-pPf">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dx7-Qk-pPf" id="7Fg-eH-NKh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="57.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bsN-LZ-hnF"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="USU-dP-EEC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="BL4-Z5-wTW" firstAttribute="top" secondItem="Mdn-P7-pUH" secondAttribute="bottom" id="Iir-5E-sBJ"/>
+                            <constraint firstItem="5zX-Pn-2yh" firstAttribute="top" secondItem="BL4-Z5-wTW" secondAttribute="bottom" id="LF9-UI-0t7"/>
+                            <constraint firstItem="BL4-Z5-wTW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QkY-K3-f0r"/>
+                            <constraint firstAttribute="trailing" secondItem="BL4-Z5-wTW" secondAttribute="trailing" id="yJ1-MJ-anG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Wce-Wn-ib1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="44.527736131934034"/>
+        </scene>
+        <!--点击手势-->
+        <scene sceneID="zOT-6w-AIb">
+            <objects>
+                <viewController storyboardIdentifier="TapGesturesViewController" title="点击手势" id="MTA-ou-I6P" customClass="TapGesturesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GCT-6R-y68"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Xe-w4-vWX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="610-Us-KUG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2T-ew-bi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="45"/>
+        </scene>
+        <!--长按手势-->
+        <scene sceneID="Av2-g5-hh3">
+            <objects>
+                <viewController storyboardIdentifier="LongPressGestureViewController" title="长按手势" id="B9x-Tm-plQ" customClass="LongPressGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NWo-CL-sH0"/>
+                        <viewControllerLayoutGuide type="bottom" id="HgJ-BN-weJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cqZ-Dm-cUf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usf-Ng-O55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246" y="44"/>
+        </scene>
+        <!--轻扫手势-->
+        <scene sceneID="dHM-pp-OK7">
+            <objects>
+                <viewController storyboardIdentifier="SwipGestureViewController" title="轻扫手势" id="WXX-Iu-ChI" customClass="SwipGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wLm-DE-JB8"/>
+                        <viewControllerLayoutGuide type="bottom" id="hAn-G3-D9I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TyI-bV-cjS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8K7-RJ-Vt4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="46"/>
+        </scene>
+        <!--拖拽手势-->
+        <scene sceneID="tqG-bf-rHt">
+            <objects>
+                <viewController storyboardIdentifier="PanGestureViewController" title="拖拽手势" id="cdK-Kv-gue" customClass="PanGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cJJ-dx-L3H"/>
+                        <viewControllerLayoutGuide type="bottom" id="ItV-Em-FX0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PUw-aM-uPp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7b-5c-9Wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="43"/>
+        </scene>
+        <!--捏合手势-->
+        <scene sceneID="sNc-t5-BT7">
+            <objects>
+                <viewController storyboardIdentifier="PinchGestureViewController" title="捏合手势" id="xv0-hk-ept" customClass="PinchGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o9s-LJ-Rw7"/>
+                        <viewControllerLayoutGuide type="bottom" id="8r2-15-eaU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z9K-8Y-UkR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dA-5w-jjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3183" y="41"/>
+        </scene>
+        <!--旋转手势-->
+        <scene sceneID="v2u-Bh-n3Z">
+            <objects>
+                <viewController storyboardIdentifier="RotationGestureViewController" title="旋转手势" id="TYm-6Q-egl" customClass="RotationGestureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gTL-Cy-01c"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lhc-xi-aPk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TOa-V2-gUr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgc-K4-Xyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3844" y="40"/>
+        </scene>
+        <!--单击手势与双击手势冲突处理-->
+        <scene sceneID="xIk-ci-zFG">
+            <objects>
+                <viewController storyboardIdentifier="SingleDoubleTapViewController" title="单击手势与双击手势冲突处理" id="LmQ-cQ-HG5" customClass="SingleDoubleTapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Sr-Is-Kc6"/>
+                        <viewControllerLayoutGuide type="bottom" id="jgs-qR-Zc5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Myw-SQ-dVy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqy-UQ-dJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4497" y="41"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HomeViewController.h
 //  GesturesDemo
 //
 //  Created by 讯心科技 on 2017/11/8.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 
 @end
