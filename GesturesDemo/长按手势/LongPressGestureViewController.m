@@ -14,9 +14,54 @@
 
 @implementation LongPressGestureViewController
 
-- (void)viewDidLoad {
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction:)];
+    
+    longPress.minimumPressDuration = 0.6; // 最短持续触摸时间
+    
+    [self.view addGestureRecognizer:longPress];
+}
+
+- (void)longPressAction:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan)
+    {
+        [self becomeFirstResponder];
+        
+        NSString *menuItemTitle = @"Reset";
+        
+        SEL action = @selector(reset:);
+        
+        UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:menuItemTitle action:action];
+        
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        
+        menu.menuItems = @[menuItem];
+        
+        CGPoint location = [gestureRecognizer locationInView:self.view];
+        
+        CGRect rect = CGRectMake(location.x, location.y, 0, 0);
+        
+        [menu setTargetRect:rect inView:self.view];
+        
+        [menu setMenuVisible:YES animated:YES];
+    }
+}
+
+- (void)reset:(UIMenuController *)menu
+{
+    [menu setMenuVisible:NO animated:YES];
+    
+    [self resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
