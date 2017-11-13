@@ -8,9 +8,14 @@
 
 #import "SingleDoubleTapViewController.h"
 
-@interface SingleDoubleTapViewController ()
+@interface SingleDoubleTapViewController ()<UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) UITapGestureRecognizer *singleTap;
+
+@property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 
 @end
+
 
 @implementation SingleDoubleTapViewController
 
@@ -18,17 +23,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
+    self.singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
     
-    singleTap.numberOfTapsRequired = 1;
+    self.singleTap.numberOfTapsRequired = 1;
     
-    [self.view addGestureRecognizer:singleTap];
+    self.singleTap.delegate = self;
     
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction:)];
+    [self.view addGestureRecognizer:self.singleTap];
     
-    doubleTap.numberOfTapsRequired = 2;
+    self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction:)];
     
-    [self.view addGestureRecognizer:doubleTap];
+    self.doubleTap.numberOfTapsRequired = 2;
+    
+    [self.view addGestureRecognizer:self.doubleTap];
 }
 
 - (void)singleTapAction:(UITapGestureRecognizer *)gestureRecognizer
@@ -44,10 +51,20 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
     {
-        NSLog(@"single tap...");
+        NSLog(@"double tap...");
     }
 }
 
+
+#pragma mark- UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (gestureRecognizer == self.singleTap && otherGestureRecognizer == self.doubleTap)
+    {
+        return YES;
+    }
+    return NO;
+}
 
 
 - (void)didReceiveMemoryWarning {
