@@ -10,14 +10,35 @@
 
 @interface PanGestureViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *targetView;
+
 @end
 
 @implementation PanGestureViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+    
+    [self.targetView addGestureRecognizer:pan];
 }
+
+
+- (void)panAction:(UIPanGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged)
+    {
+        CGPoint translation = [gestureRecognizer translationInView:self.view];
+        
+        self.targetView.center = CGPointMake(self.targetView.center.x + translation.x, self.targetView.center.y + translation.y);
+        
+        [gestureRecognizer setTranslation:CGPointZero inView:self.view];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

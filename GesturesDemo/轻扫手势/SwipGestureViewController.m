@@ -14,10 +14,26 @@
 
 @implementation SwipGestureViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UISwipeGestureRecognizer *swip = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipAction:)];
+    // 设置轻扫手势方向
+    swip.direction = UISwipeGestureRecognizerDirectionRight;
+    
+    [self.view addGestureRecognizer:swip];
 }
+
+- (void)swipAction:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

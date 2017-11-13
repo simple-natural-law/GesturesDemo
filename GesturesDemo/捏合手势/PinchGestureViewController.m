@@ -9,6 +9,8 @@
 
 @interface PinchGestureViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *targetView;
+
 @end
 
 @implementation PinchGestureViewController
@@ -16,7 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchAction:)];
+    
+    [self.view addGestureRecognizer:pinch];
 }
+
+- (void)pinchAction:(UIPinchGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged)
+    {
+        self.targetView.transform = CGAffineTransformMakeScale(gestureRecognizer.scale, gestureRecognizer.scale);
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
