@@ -22,7 +22,23 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     
-    tap
+    tap.numberOfTapsRequired = 1; // 点击次数
+    tap.numberOfTouchesRequired = 1; // 点击的手指个数
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)tapAction:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint location = [gestureRecognizer locationInView:self.view];
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            
+            self.targetView.center = location;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
