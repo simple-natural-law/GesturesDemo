@@ -21,6 +21,7 @@
 		1AB094381FB982820049F19B /* PanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0942F1FB982820049F19B /* PanGestureViewController.m */; };
 		1AB094391FB982820049F19B /* LongPressGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094321FB982820049F19B /* LongPressGestureViewController.m */; };
 		1AF42BF91FBA94A100295882 /* SwipPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF42BF81FBA94A100295882 /* SwipPanViewController.m */; };
+		1AF42BFD1FBAD8E500295882 /* MultipleGesturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF42BFC1FBAD8E500295882 /* MultipleGesturesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		1AB094321FB982820049F19B /* LongPressGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressGestureViewController.m; sourceTree = "<group>"; };
 		1AF42BF71FBA94A100295882 /* SwipPanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipPanViewController.h; sourceTree = "<group>"; };
 		1AF42BF81FBA94A100295882 /* SwipPanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipPanViewController.m; sourceTree = "<group>"; };
+		1AF42BFB1FBAD8E500295882 /* MultipleGesturesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipleGesturesViewController.h; sourceTree = "<group>"; };
+		1AF42BFC1FBAD8E500295882 /* MultipleGesturesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultipleGesturesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		1A9D69271FB2FDD300DDA475 /* GesturesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1AF42BFA1FBAD8BF00295882 /* 同时识别多个手势 */,
 				1AF42BF61FBA947200295882 /* 轻扫手势和拖拽手势冲突处理 */,
 				1AB094241FB982820049F19B /* 单击手势与双击手势冲突处理 */,
 				1AB0941E1FB982820049F19B /* 点击手势 */,
@@ -175,6 +179,15 @@
 			path = "轻扫手势和拖拽手势冲突处理";
 			sourceTree = "<group>";
 		};
+		1AF42BFA1FBAD8BF00295882 /* 同时识别多个手势 */ = {
+			isa = PBXGroup;
+			children = (
+				1AF42BFB1FBAD8E500295882 /* MultipleGesturesViewController.h */,
+				1AF42BFC1FBAD8E500295882 /* MultipleGesturesViewController.m */,
+			);
+			path = "同时识别多个手势";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,7 +219,7 @@
 				TargetAttributes = {
 					1A9D69241FB2FDD300DDA475 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -254,6 +267,7 @@
 				1A9D69381FB2FDD300DDA475 /* main.m in Sources */,
 				1A9D692A1FB2FDD300DDA475 /* AppDelegate.m in Sources */,
 				1AB094391FB982820049F19B /* LongPressGestureViewController.m in Sources */,
+				1AF42BFD1FBAD8E500295882 /* MultipleGesturesViewController.m in Sources */,
 				1AB094351FB982820049F19B /* SingleDoubleTapViewController.m in Sources */,
 				1AB094361FB982820049F19B /* RotationGestureViewController.m in Sources */,
 				1AB094371FB982820049F19B /* SwipGestureViewController.m in Sources */,
@@ -390,8 +404,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZ9R55GK8Q;
 				INFOPLIST_FILE = GesturesDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -406,8 +421,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZ9R55GK8Q;
 				INFOPLIST_FILE = GesturesDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -31,7 +31,8 @@
                         @{@"title":@"捏合手势", @"target":@"PinchGestureViewController"},
                         @{@"title":@"旋转手势", @"target":@"RotationGestureViewController"},
                         @{@"title":@"单击手势与双击手势冲突处理", @"target":@"SingleDoubleTapViewController"},
-                        @{@"title":@"轻扫手势与拖拽手势冲突处理", @"target":@"SwipPanViewController"}];
+                        @{@"title":@"轻扫手势与拖拽手势冲突处理", @"target":@"SwipPanViewController"},
+                        @{@"title":@"同时识别多个手势", @"target":@"MultipleGesturesViewController"}];
 }
 
 #pragma mark- UITableViewDataSource
