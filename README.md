@@ -115,7 +115,7 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 
 ### 单击手势和双击手势冲突处理
 
-当一个视图上附加有单击手势和双击手势时，单击手势会始终在双击手势之前被识别，但是我们可以通过实现手势委托对象的`gestureRecognizer:shouldRequireFailureOfGestureRecognizer:`方法去延后单击手势的识别直到双击手势被识别失败。代码如下：
+当视图上附加有单击和双击手势时，单击手势会始终在双击手势之前被识别，但是可以通过实现手势委托对象的`gestureRecognizer:shouldRequireFailureOfGestureRecognizer:`方法去延后单击手势的识别直到双击手势被识别失败，代码如下：
 ```
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
@@ -129,4 +129,15 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 
 ### 轻扫手势和拖拽手势冲突处理
 
+当视图上附加有轻扫和拖拽手势时，拖拽手势会始终在轻扫手势之前被识别。在这种情况下，可以通过实现手势委托对象的`gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:`方法使拖拽手势在识别轻扫手势失败后才被识别，代码如下：
+```
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if (gestureRecognizer == self.swip && otherGestureRecognizer == self.pan)
+    {
+        return YES;
+    }
+    return NO;
+}
+```
 

@@ -20,6 +20,7 @@
 		1AB094371FB982820049F19B /* SwipGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0942C1FB982820049F19B /* SwipGestureViewController.m */; };
 		1AB094381FB982820049F19B /* PanGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB0942F1FB982820049F19B /* PanGestureViewController.m */; };
 		1AB094391FB982820049F19B /* LongPressGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB094321FB982820049F19B /* LongPressGestureViewController.m */; };
+		1AF42BF91FBA94A100295882 /* SwipPanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF42BF81FBA94A100295882 /* SwipPanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		1AB0942F1FB982820049F19B /* PanGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureViewController.m; sourceTree = "<group>"; };
 		1AB094311FB982820049F19B /* LongPressGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressGestureViewController.h; sourceTree = "<group>"; };
 		1AB094321FB982820049F19B /* LongPressGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressGestureViewController.m; sourceTree = "<group>"; };
+		1AF42BF71FBA94A100295882 /* SwipPanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipPanViewController.h; sourceTree = "<group>"; };
+		1AF42BF81FBA94A100295882 /* SwipPanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipPanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		1A9D69271FB2FDD300DDA475 /* GesturesDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1AF42BF61FBA947200295882 /* 轻扫手势和拖拽手势冲突处理 */,
 				1AB094241FB982820049F19B /* 单击手势与双击手势冲突处理 */,
 				1AB0941E1FB982820049F19B /* 点击手势 */,
 				1AB094211FB982820049F19B /* 捏合手势 */,
@@ -162,6 +166,15 @@
 			path = "长按手势";
 			sourceTree = "<group>";
 		};
+		1AF42BF61FBA947200295882 /* 轻扫手势和拖拽手势冲突处理 */ = {
+			isa = PBXGroup;
+			children = (
+				1AF42BF71FBA94A100295882 /* SwipPanViewController.h */,
+				1AF42BF81FBA94A100295882 /* SwipPanViewController.m */,
+			);
+			path = "轻扫手势和拖拽手势冲突处理";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,6 +248,7 @@
 			files = (
 				1AB094341FB982820049F19B /* PinchGestureViewController.m in Sources */,
 				1AB094381FB982820049F19B /* PanGestureViewController.m in Sources */,
+				1AF42BF91FBA94A100295882 /* SwipPanViewController.m in Sources */,
 				1AB094331FB982820049F19B /* TapGesturesViewController.m in Sources */,
 				1A9D692D1FB2FDD300DDA475 /* HomeViewController.m in Sources */,
 				1A9D69381FB2FDD300DDA475 /* main.m in Sources */,

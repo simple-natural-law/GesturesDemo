@@ -30,7 +30,8 @@
                         @{@"title":@"轻扫手势", @"target":@"SwipGestureViewController"},
                         @{@"title":@"捏合手势", @"target":@"PinchGestureViewController"},
                         @{@"title":@"旋转手势", @"target":@"RotationGestureViewController"},
-                        @{@"title":@"单击手势与双击手势冲突处理", @"target":@"SingleDoubleTapViewController"}];
+                        @{@"title":@"单击手势与双击手势冲突处理", @"target":@"SingleDoubleTapViewController"},
+                        @{@"title":@"轻扫手势与拖拽手势冲突处理", @"target":@"SwipPanViewController"}];
 }
 
 #pragma mark- UITableViewDataSource
@@ -50,7 +51,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.0;
+    return 44.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
