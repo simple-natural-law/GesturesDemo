@@ -152,6 +152,21 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 
 ### 允许同时识别多个手势
 
-在默认情况下，UIkit在单个视图中一次只允许识别一个手势，但如果有需要，也可以在单个视图中同时识别多个手势。要允许在单个视图中同时识别多个手势，需要手势委托对象实现`gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:`方法。UIKit会调用此方法来判断是否允许同时识别两个手势，默认返回`NO`。
+在默认情况下，UIkit在单个视图中一次只允许识别一个手势，但如果有需要，也可以在单个视图中同时识别多个手势。要允许在单个视图中同时识别多个手势，需要手势委托对象实现`gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:`方法。UIKit会调用此方法来判断是否允许同时识别两个手势，默认返回`NO`。**注意，要同时识别多个手势，它们的委托对象都需要实现`gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:`方法，如果只有其中一个实现了，但其他的没有实现，那么UIKit也不会同时识别它们。**
 
-当一个视图上同时附加有拖拽、 缩放和旋转手势时，允许用户在屏幕上可以同时拖动、 缩放和旋转视图
+当一个视图上同时附加有拖拽、 缩放和旋转手势时，允许用户在屏幕上可以同时拖动、 缩放和旋转视图，代码如下：
+```
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    // 允许同时识别在同一视图上的特定手势
+    if (gestureRecognizer.view == self.targetView && otherGestureRecognizer.view == self.targetView)
+    {
+        // 排除长按手势
+        if (![gestureRecognizer isMemberOfClass:[UILongPressGestureRecognizer class]] && ![otherGestureRecognizer isMemberOfClass:[UILongPressGestureRecognizer class]])
+        {
+            return YES;
+        }
+    }
+    return NO;
+}
+```

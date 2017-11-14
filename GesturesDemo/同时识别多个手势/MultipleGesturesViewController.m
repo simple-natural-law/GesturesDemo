@@ -9,7 +9,11 @@
 #import "MultipleGesturesViewController.h"
 
 @interface MultipleGesturesViewController ()<UIGestureRecognizerDelegate>
-
+{
+    CGFloat _currentScale;
+    
+    CGFloat _currentRotation;
+}
 @property (weak, nonatomic) IBOutlet UIView *targetView;
 
 @end
@@ -55,7 +59,9 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged)
     {
-        self.targetView.transform = CGAffineTransformMakeScale(gestureRecognizer.scale, gestureRecognizer.scale);
+        _currentScale = gestureRecognizer.scale;
+        
+        self.targetView.transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(_currentRotation), CGAffineTransformMakeScale(gestureRecognizer.scale, gestureRecognizer.scale));
     }
 }
 
@@ -64,22 +70,25 @@
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan || gestureRecognizer.state == UIGestureRecognizerStateChanged)
     {
-        self.targetView.transform = CGAffineTransformMakeRotation(gestureRecognizer.rotation);
+        _currentRotation = gestureRecognizer.rotation;
+        
+        self.targetView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(_currentScale, _currentScale), CGAffineTransformMakeRotation(gestureRecognizer.rotation));
     }
 }
 
 #pragma mark- UIGestureRecognizerDelegate
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+// 用真机测试
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     // 允许同时识别在同一视图上的特定手势
     if (gestureRecognizer.view == self.targetView && otherGestureRecognizer.view == self.targetView)
     {
+        // 排除长按手势
         if (![gestureRecognizer isMemberOfClass:[UILongPressGestureRecognizer class]] && ![otherGestureRecognizer isMemberOfClass:[UILongPressGestureRecognizer class]])
         {
             return YES;
         }
     }
-    
     return NO;
 }
 
