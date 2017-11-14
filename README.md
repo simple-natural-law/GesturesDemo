@@ -173,4 +173,6 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 
 **要同时识别多个手势，它们的委托对象都要实现`gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:`方法，如果只有其中一个手势的委托对象实现了，但其它手势的委托对象没有实现，那么UIKit也不会同时识别它们。**
 
+## 自定义手势识别器
+
 
