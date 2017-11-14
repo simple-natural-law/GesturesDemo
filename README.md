@@ -176,3 +176,6 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 ## 自定义手势识别器
 
 
+## Demo
+
+示例代码下载地址：https://github.com/zhangshijian/GesturesDemo.git
