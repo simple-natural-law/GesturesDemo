@@ -175,6 +175,7 @@ UIKit通过调用手势识别器的委托对象的方法来确定一个手势是
 
 ## 自定义手势识别器
 
+当UIKit定义的手势类型不能满足我们需求时，我们也可以自定义手势识别器来处理特定的触摸事件。自定义手势识别器的详情可以参看[Implementing a Custom Gesture Recognizer](https://developer.apple.com/documentation/uikit/touches_presses_and_gestures/implementing_a_custom_gesture_recognizer)
 
 ## Demo
 
